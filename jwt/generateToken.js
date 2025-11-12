@@ -7,11 +7,12 @@ import jwt from 'jsonwebtoken';
 //  console.log(token ,"token generatre")
  res.cookie("jwt",token,{
     httpOnly:true,
-    secure:process.env.NODE_ENV === "production",
-    sameSite:'lax',
+    secure:true,
+    sameSite:'none',
     maxAge:180*24*60*60*1000 //180 days
  })
 }
 
 
 export default createTokenAndSaveCookie;
+
