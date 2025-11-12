@@ -10,10 +10,6 @@ import {app, server} from './SocketiO/server.js'
 // const app=express();
 dotenv.config()
 
-//middleware
-app.use(express.json());
-app.use(cookieParser());
-
 app.use(cors({
    origin:["http://localhost:5173",
            "http://localhost:5174",
@@ -21,6 +17,10 @@ app.use(cors({
           ],
     methods: ["GET", "POST", "PUT", "DELETE"],
    credentials: true }));
+
+//middleware
+app.use(express.json());
+app.use(cookieParser());
 
 const PORT=process.env.PORT || 5000;
 const URI=process.env.MONGODB_URI
@@ -41,6 +41,7 @@ app.use("/api/message",messageRoute)
 server.listen(PORT,()=>{
 console.log(`Server is running on ${PORT}`);
 })
+
 
 
 
