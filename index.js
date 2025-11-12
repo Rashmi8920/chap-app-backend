@@ -19,6 +19,7 @@ app.use(cors({
            "http://localhost:5174",
             "https://chat-application-52gd.onrender.com",
           ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
    credentials: true }));
 
 const PORT=process.env.PORT || 5000;
@@ -40,6 +41,7 @@ app.use("/api/message",messageRoute)
 server.listen(PORT,()=>{
 console.log(`Server is running on ${PORT}`);
 })
+
 
 
 
