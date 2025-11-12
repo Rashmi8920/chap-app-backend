@@ -10,6 +10,7 @@ const io=new Server(server,{
         origin:["http://localhost:5173",
         "https://chat-application-52gd.onrender.com"],
         methods:["GET","POST"],
+          credentials: true, 
     }
 })
 
@@ -40,4 +41,5 @@ io.emit("getOnlineUsers", Object.keys(users));
     })
 })  
 export {app,io,server}
+
 
