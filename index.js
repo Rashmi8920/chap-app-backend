@@ -15,7 +15,10 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-   origin:["http://localhost:5173","http://localhost:5174" ],
+   origin:["http://localhost:5173",
+           "http://localhost:5174",
+            "https://chat-application-52gd.onrender.com",
+          ],
    credentials: true }));
 
 const PORT=process.env.PORT || 5000;
@@ -37,5 +40,6 @@ app.use("/api/message",messageRoute)
 server.listen(PORT,()=>{
 console.log(`Server is running on ${PORT}`);
 })
+
 
 
